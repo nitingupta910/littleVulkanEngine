@@ -16,6 +16,11 @@ class LveWindow {
 
   bool shouldClose() { return glfwWindowShouldClose(window); }
 
+  void createWindowSurface(VkInstance instance, VkSurfaceKHR *surface);
+
+  int getWidth() { return width; }
+  int getHeight() { return height; }
+
  private:
   void initWindow();
 
