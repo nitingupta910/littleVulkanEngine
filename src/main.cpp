@@ -1,4 +1,5 @@
-#include "lve_app_base.hpp"
+
+#include "first_app.hpp"
 
 // std
 #include <cstdlib>
@@ -6,7 +7,7 @@
 #include <stdexcept>
 
 int main() {
-  lve::LveAppBase app{};
+  lve::FirstApp app{};
 
   try {
     app.run();
@@ -14,5 +15,6 @@ int main() {
     std::cerr << e.what() << '\n';
     return EXIT_FAILURE;
   }
+
   return EXIT_SUCCESS;
 }

@@ -2,5 +2,6 @@
 mkdir -p build
 cd build
 cmake -S ../ -B .
-make && make Shaders && ./tut1
+make && make Shaders
 cd ..
+./build/tut2

@@ -3,9 +3,7 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
-// std
 #include <string>
-
 namespace lve {
 
 class LveWindow {
@@ -23,6 +21,7 @@ class LveWindow {
 
   const int width;
   const int height;
+
   std::string windowName;
   GLFWwindow *window;
 };
