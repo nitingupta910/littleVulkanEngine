@@ -31,7 +31,7 @@ class FirstApp {
   void createCommandBuffers();
   void drawFrame();
 
-  LveWindow lveWindow{WIDTH, HEIGHT, "Hello Vulkan!"};
+  LveWindow lveWindow{WIDTH, HEIGHT, "Tutorial 07"};
   LveDevice lveDevice{lveWindow};
   LveSwapChain lveSwapChain{lveDevice, lveWindow.getExtent()};
   std::unique_ptr<LvePipeline> lvePipeline;
