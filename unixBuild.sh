@@ -4,4 +4,4 @@ cd build
 cmake -S ../ -B .
 make && make Shaders
 cd ..
-./build/tut17
+./build/tut18

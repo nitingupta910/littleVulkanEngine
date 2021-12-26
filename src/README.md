@@ -1,40 +1,31 @@
-# Tutorial 17
+# Diffuse Shading - Tutorial 18
 
-In this tutorial we make use of tinyobjloader, a tiny but powerful single file wavefront obj loader, to load 3D models into the engine.
+In this tutorial we implement a diffuse lighting model with a constant ambient light term in the vertex shader. This colors the vase object by calculating the intensity of light for each vertex based on how directly the surface at the point faces the incoming light.
 
-[TinyObjLoader Header File](https://github.com/tinyobjloader/tinyobjloader/blob/master/tiny_obj_loader.h)
+We use a directional light source, which means the same direction is used for every vertex. This simulates a light source that is infinitely far away, with all incoming light rays being parallel. A real world example of this would be sunlight, since due to its extreme distance, incoming light rays can be treated as parallel.
 
-[Models Sharedrive](https://drive.google.com/drive/folders/1QuvSRG4HCxCfC5k0F5G03tNwUQoqE8f3?usp=sharing)
+[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/8af749ded9c280da08a05a5f06f8df477c4e17b6) 
 
-[Paste Bin - hashCombine](https://pastebin.com/sRu5PiMs)
-
-[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/b1b665ed9eb82c69f99e56fe42e82d081a4a9203) 
-
-[Video Tutorial](https://youtu.be/jdiPVfIHmEA)
+[Video Tutorial](https://youtu.be/wfh2N4u-nOU)
 
 ## Resources
 
-[Vulkan-Tutorial Loading Models](https://vulkan-tutorial.com/Loading_models)
+[Physically Based Rendering - The light transport equation](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/The_Light_Transport_Equation)
 
-[Wikipedia - Wavefront File object format](https://en.wikipedia.org/wiki/Wavefront_.obj_file)
+[Scratchapixel - Diffuse and lambertian shading](https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-shading/diffuse-lambertian-shading)
 
-[Tiny object loader git repo](https://github.com/tinyobjloader/tinyobjloader)
+[Learning Modern 3D Graphics Programming - Transforming Normals](https://paroj.github.io/gltut/Illumination/Tut09%20Normal%20Transformation.html)
 
-[Hash Combine explanation](https://stackoverflow.com/a/57595105)
+[Learning Modern 3D Graphics Programming - Ambient Lighting](https://paroj.github.io/gltut/Illumination/Tut09%20Global%20Illumination.html)
 
-[Cpp reference - Fold expressions](https://en.cppreference.com/w/cpp/language/fold)
+[Properties of inverse matrices](https://www.web-formulas.com/Math_Formulas/Linear_Algebra_Properties_of_Inverse_Matrices.aspx)
 
-[PolyHaven - Ceramic Vase Model](https://polyhaven.com/a/ceramic_vase_01)
-
-[Importing .obj colors](https://blender.stackexchange.com/questions/31997/how-can-i-get-vertex-painted-obj-files-to-import-into-blender)
 
 ## Building
 
 Follow the steps in tutorial 0 that go over how to set up your development environment. Next create a directory for your project and copy the contents of this tutorial into your directory. Rename .env-example to .env and update the filepaths to your installed locations.
 
-Download the [models directory](https://drive.google.com/drive/folders/1QuvSRG4HCxCfC5k0F5G03tNwUQoqE8f3?usp=sharing) an add to your project (as demonstrated in tutorial 17).
-
-Build the project using make, and run. The project should compile successfully and display a multi-colored cube. Move the camera with the arrow and WASD keys.
+Build the project using make, and run. The project should compile successfully and displaytwo vases. Move the camera with the arrow and WASD keys.
 
 ## Fixing Common Issues
 
