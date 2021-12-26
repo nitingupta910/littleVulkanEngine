@@ -1,22 +1,21 @@
-# Tutorial 11
+# Tutorial 12
 
-This is a coding focused tutorial with not much theory. We restructure our application class by creating a Renderer class and a SimpleRenderSystem class. This modular and flexible design should make implementing many future topics possible and easy to integrate into the engine. 
+We finally moved to 3D! In this tutorial we update the engine to use 3D positions and homogeneous coordinates, opening the possibility to more complicated transformation matrices. 
 
-• The renderer is responsible for managing the swap chain, command buffers, and drawing functionality
-• The SimpleRenderSystem manages a pipeline and its layout, and provides the data necessary to render a list of game objects
+[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/6cc8edabc8aa1dd54bc1faa76884ee1e348442d7) 
 
-We also add a check to ensure recreated swap chain render passes remain compatible, and make the renderer class’ command buffer resources independent of the swap chain’s image count.
+[Video Tutorial](https://youtu.be/0X_kRtyVzm4)
 
-[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/0e92b3678b637258e4bfbc59ef253f486c814aaf) 
-
-[Video Tutorial](https://youtu.be/uGRSTRGlZVs)
 
 ## Resources
 
-[RainbowSystem example](https://pastebin.com/si4eaa3g)
+[Wikipedia Euler Angles](https://en.wikipedia.org/wiki/Euler_angles)
 
-[Gravity & vector field system example](https://pastebin.com/7NCfdNrd)
-See physicsDemo.patch file for exact changes
+[Create Cube Model](https://pastebin.com/iZSg0XHh)
+
+[Fast mat4() implementation](https://pastebin.com/KFvG09A8)
+
+[Understanding Quaternions](https://www.3dgep.com/understanding-quaternions/)
 
 ## Building
 
