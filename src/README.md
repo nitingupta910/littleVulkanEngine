@@ -1,26 +1,22 @@
-# Tutorial 10
+# Tutorial 11
 
-Matrices are an incredibly useful tool for representing linear transformations on geometry. In this tutorial we cover 2d transformation matrices and use them in our shaders to stretch, shrink and rotate our vertex position.
+This is a coding focused tutorial with not much theory. We restructure our application class by creating a Renderer class and a SimpleRenderSystem class. This modular and flexible design should make implementing many future topics possible and easy to integrate into the engine. 
 
-I also introduce the idea of a runtime game object model, and we create a (very) simple game object class to manage the different entities and components they are made up of. 
+• The renderer is responsible for managing the swap chain, command buffers, and drawing functionality
+• The SimpleRenderSystem manages a pipeline and its layout, and provides the data necessary to render a list of game objects
 
-[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/c4d0ca7ac67c33b98c8dd69e854276e5e8281b6a) 
+We also add a check to ensure recreated swap chain render passes remain compatible, and make the renderer class’ command buffer resources independent of the swap chain’s image count.
 
-[Video Tutorial](https://youtu.be/gxUcgc88tD4)
+[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/0e92b3678b637258e4bfbc59ef253f486c814aaf) 
+
+[Video Tutorial](https://youtu.be/uGRSTRGlZVs)
 
 ## Resources
 
-[Scatchapixel's Maths for computer graphics](https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/geometry/points-vectors-and-normals)
+[RainbowSystem example](https://pastebin.com/si4eaa3g)
 
-[3Blue1Brown Linear algrebra playlist](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) 
-
-[Column Major Order explained](https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/geometry/row-major-vs-column-major-vector) 
-
-[Object oriented Game Engine Architecture](https://homepages.fhv.at/thjo/lecturenotes/sysarch/game-engine-architecture.html#game-objects) 
-
-[Ray Renderlich Introduction to Entity Component Systems (good explanation)](https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games)
-
-[A c++ ECS implementation I like by Austin Morlan](https://austinmorlan.com/posts/entity_component_system/)
+[Gravity & vector field system example](https://pastebin.com/7NCfdNrd)
+See physicsDemo.patch file for exact changes
 
 ## Building
 
