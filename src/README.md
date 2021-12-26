@@ -1,24 +1,26 @@
-# Tutorial 12
+# Tutorial 13
 
-We finally moved to 3D! In this tutorial we update the engine to use 3D positions and homogeneous coordinates, opening the possibility to more complicated transformation matrices. 
+We implement functions to create the orthographic projection and the perspective projection matrices. Projection matrices change the shape and location of vulkan’s canonical view volume. This allows us to render objects outside of the canonical vulkan view volume, and apply perspective to the objects, making objects appear smaller as their z-depth increases.
 
-[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/6cc8edabc8aa1dd54bc1faa76884ee1e348442d7) 
+[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/011498dbbbfc303293943ca51934686ba66ebbdd) 
 
-[Video Tutorial](https://youtu.be/0X_kRtyVzm4)
+[Theory Video - Perspective Projection Matrices](https://youtu.be/U0_ONQQ5ZNM)
 
+[Video Tutorial](https://youtu.be/YO46x8fALzE)
+
+[Projection Matrices paste bin](https://pastebin.com/eFwnyuX6)
 
 ## Resources
 
-[Wikipedia Euler Angles](https://en.wikipedia.org/wiki/Euler_angles)
+Fundamentals of Computer Graphics by Peter Shirley & Steve Marschner
 
-[Create Cube Model](https://pastebin.com/iZSg0XHh)
+[A projection matrix derivation for openGL](http://www.songho.ca/opengl/gl_projectionmatrix.html)
 
-[Fast mat4() implementation](https://pastebin.com/KFvG09A8)
+[Blog post on vulkans coordinate system](https://matthewwellings.com/blog/the-new-vulkan-coordinate-system/)
 
-[Understanding Quaternions](https://www.3dgep.com/understanding-quaternions/)
 
 ## Building
 
 Follow the steps in tutorial 0 that go over how to set up your development environment. Next create a directory for your project and copy the contents of this tutorial into your directory. Rename .env-example to .env and update the filepaths to your installed locations.
 
-Build the project using make, and run. The project should compile successfully and when display a rotating green triangle on the screen.
+Build the project using make, and run. The project should compile successfully and display a rotating multi-colored cube.
