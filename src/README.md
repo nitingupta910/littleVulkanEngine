@@ -1,34 +1,24 @@
-# Tutorial 15
+# Tutorial 16
 
-Getting user input and time loops are both integral parts to any game engine and are complex topics. In this tutorial I briefly introduce the concepts and we add the ability to dynamically move the camera in a frame rate independent way. 
+Index buffers are a way to reduce the amount of gpu memory required to store a model’s attribute data by allowing duplicate vertex data to be removed from the Vertex Buffer. An Index Buffer acts as an array of pointers into the Vertex Buffer, allowing vertex data to be reused by multiple triangles.
 
-I highly recommend these two resources for further reading on the game loop programming pattern as they go into more depth than I go into here, and bring up some common issues that may not be immediately noticeable with the basic implementation I demonstrate in this video.
+A staging buffer is used in the process of transferring data from the host (cpu) to the device (gpu), and is a temporary location to hold data so that it can then be transferred to more optimal (faster) memory. 
 
-[Programming Patterns - Game Loop](https://gameprogrammingpatterns.com/game-loop.html)
-[Fix your timestep](https://gafferongames.com/post/fix_your_timestep/)
+In this tutorial we update the model class to support index buffers, and use staging buffers to transfer the model data to device optimal memory. 
 
-For user input the tutorial series will focus on GLFW because I’d like to avoid the additional complexity while we cover other topics. After we’ve covered some more vulkan material, we will return to these topics in greater detail.
+[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/411336151b35c9434b0df73fd4f0f94febd99589) 
 
-[A GLFW Keyboard and mouse tutorial](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-6-keyboard-and-mouse/)
-[GLFW Input Guide](https://www.glfw.org/docs/3.3/input_guide.html)
+[Video Tutorial](https://youtu.be/qxuvQVtehII)
 
-[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/154cd39c75b58b3d0501e04bf13e0ad12cd2bacb) 
+[Paste Bin - Updated createCubeModel()](https://pastebin.com/4T10MFgb)
 
-[Video Tutorial](https://youtu.be/wFV9zPU_Cjg)
-
-[KeyMappings Struct paste bin](https://pastebin.com/raw/V1539Dz5)
+[PolyHaven - Apple 3D Model](https://polyhaven.com/a/food_apple_01)
 
 ## Resources
 
-Fundamentals of Computer Graphics by Peter Shirley & Steve Marschner
+[Vulkan-Tutorial Index Buffers](https://vulkan-tutorial.com/Vertex_buffers/Index_buffer)
 
-[Programming Patterns - Game Loop](https://gameprogrammingpatterns.com/game-loop.html)
-
-[Fix your timestep](https://gafferongames.com/post/fix_your_timestep/)
-
-[A GLFW Keyboard and mouse tutorial](http://www.opengl-tutorial.org/beginners-tutorials/tutorial-6-keyboard-and-mouse/)
-
-[GLFW Input Guide](https://www.glfw.org/docs/3.3/input_guide.html)
+[Vulkan-Tutorial Staging Buffers](https://vulkan-tutorial.com/Vertex_buffers/Staging_buffer)
 
 ## Building
 
