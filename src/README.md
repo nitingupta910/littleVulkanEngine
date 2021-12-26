@@ -1,23 +1,16 @@
-# Tutorial 13
+# Tutorial 14
 
-We implement functions to create the orthographic projection and the perspective projection matrices. Projection matrices change the shape and location of vulkan’s canonical view volume. This allows us to render objects outside of the canonical vulkan view volume, and apply perspective to the objects, making objects appear smaller as their z-depth increases.
+We implement the camera/view transform. This allows us to place a virtual camera anywhere within the game world, which makes it possible to control what is captured by the viewing frustum and displayed to the screen. 
 
-[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/011498dbbbfc303293943ca51934686ba66ebbdd) 
+[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/edbec223bcf8012c92aca46da5f090fbb1ba86f3) 
 
-[Theory Video - Perspective Projection Matrices](https://youtu.be/U0_ONQQ5ZNM)
+[Video Tutorial](https://youtu.be/rvJHkYnAR3w)
 
-[Video Tutorial](https://youtu.be/YO46x8fALzE)
-
-[Projection Matrices paste bin](https://pastebin.com/eFwnyuX6)
+[Set View Matrices paste bin](https://pastebin.com/raw/cvCeZcz4)
 
 ## Resources
 
 Fundamentals of Computer Graphics by Peter Shirley & Steve Marschner
-
-[A projection matrix derivation for openGL](http://www.songho.ca/opengl/gl_projectionmatrix.html)
-
-[Blog post on vulkans coordinate system](https://matthewwellings.com/blog/the-new-vulkan-coordinate-system/)
-
 
 ## Building
 
