@@ -1,25 +1,30 @@
-# Diffuse Shading - Tutorial 18
+# Uniform Buffers - Tutorial 19
 
-In this tutorial we implement a diffuse lighting model with a constant ambient light term in the vertex shader. This colors the vase object by calculating the intensity of light for each vertex based on how directly the surface at the point faces the incoming light.
+In this tutorial we create a buffer abstraction to make working with buffers a bit more convenient. We replace existing usages (vertex and index buffers) with this new abstraction, and then create a uniform buffer object which will store read-only data that can be updated dynamically between frames, to pass additional data to our shaders.
 
-We use a directional light source, which means the same direction is used for every vertex. This simulates a light source that is infinitely far away, with all incoming light rays being parallel. A real world example of this would be sunlight, since due to its extreme distance, incoming light rays can be treated as parallel.
+Uniform buffer data can be used within shaders, similarly to how to push constant data may be used. However, unlike push constant data that is limited to only 128 bytes for certain devices, the minimum guaranteed size for uniform buffer data is 16KB.
 
-[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/8af749ded9c280da08a05a5f06f8df477c4e17b6) 
+[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/0c1fd4dd97e5e8ab7cdf60ccafe23ed8e469405a)
 
-[Video Tutorial](https://youtu.be/wfh2N4u-nOU)
+[Video Tutorial](https://youtu.be/may_GMkfs5k)
+
+[Buffer Header](https://pastebin.com/EcB0VmnE)
+
+[Buffer Implementation](https://pastebin.com/3WAe7nJx)
+
+## BUG FIX! - nonCoherentAtomSize
+
+[Bug fix code changes](https://github.com/blurrypiano/littleVulkanEngine/commit/65b9c745d4e6728f8e61cd475c6ad72ac48a1ccd)
+
+[Video - Bug fix](https://youtu.be/hFcmtJG3_Ao)
 
 ## Resources
 
-[Physically Based Rendering - The light transport equation](https://www.pbr-book.org/3ed-2018/Light_Transport_I_Surface_Reflection/The_Light_Transport_Equation)
+[Zeux - Writing an efficient vulkan Renderer](https://zeux.io/2020/02/27/writing-an-efficient-vulkan-renderer/)
 
-[Scratchapixel - Diffuse and lambertian shading](https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-shading/diffuse-lambertian-shading)
+[Kyle Halladay - Comparing Uniform Data Transfer Methods](http://kylehalladay.com/blog/tutorial/vulkan/2017/08/13/Vulkan-Uniform-Buffers.html)
 
-[Learning Modern 3D Graphics Programming - Transforming Normals](https://paroj.github.io/gltut/Illumination/Tut09%20Normal%20Transformation.html)
-
-[Learning Modern 3D Graphics Programming - Ambient Lighting](https://paroj.github.io/gltut/Illumination/Tut09%20Global%20Illumination.html)
-
-[Properties of inverse matrices](https://www.web-formulas.com/Math_Formulas/Linear_Algebra_Properties_of_Inverse_Matrices.aspx)
-
+[Sascha Willems - Example VkBuffer wrapper class](https://github.com/SaschaWillems/Vulkan/blob/master/base/VulkanBuffer.h)
 
 ## Building
 
@@ -30,5 +35,3 @@ Build the project using make, and run. The project should compile successfully a
 ## Fixing Common Issues
 
 The most likely cause for an error is that the relative filepaths are not correct. This can happen if the current working directory for when the program executable is run is not the same as the project directory. In this case try changing "shaders/simple_shader.vert.spv" as "shaders/simple_shader.frag.spv" in simple_render_system.cpp to use an absolute path instead, as well the filepath for "models/smooth_vase.obj" in first_app.cpp
-
-
