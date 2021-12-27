@@ -1,30 +1,22 @@
-# Uniform Buffers - Tutorial 19
+# Descriptor Sets - Tutorial 20
 
-In this tutorial we create a buffer abstraction to make working with buffers a bit more convenient. We replace existing usages (vertex and index buffers) with this new abstraction, and then create a uniform buffer object which will store read-only data that can be updated dynamically between frames, to pass additional data to our shaders.
+Vulkan uses descriptors as a way to provide resources to our shader programs.  Descriptors cannot be bound to a pipeline individually, and must be grouped into a set. Additionally, before pipeline creation, a descriptor set layout must be provided. A descriptor set layout acts as a blueprint, telling the pipeline how many descriptors will be bound, and what types of resources each descriptor uses.
 
-Uniform buffer data can be used within shaders, similarly to how to push constant data may be used. However, unlike push constant data that is limited to only 128 bytes for certain devices, the minimum guaranteed size for uniform buffer data is 16KB.
+In this tutorial, we create abstractions for descriptor sets, descriptor set layouts and descriptor pools, to make these objects easier to work with within the engine. We create a descriptor set layout that contains a single buffer descriptor, and use this to bind the uboBuffer for use within the vertex shader.
 
-[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/0c1fd4dd97e5e8ab7cdf60ccafe23ed8e469405a)
+[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/17b43cb62389e75d9763ccfed503702281e76473)
 
-[Video Tutorial](https://youtu.be/may_GMkfs5k)
+[Video Tutorial](https://youtu.be/d5p44idnZLQ)
 
-[Buffer Header](https://pastebin.com/EcB0VmnE)
+[Descriptors Header](https://pastebin.com/yU7dMAxt)
 
-[Buffer Implementation](https://pastebin.com/3WAe7nJx)
+[Descriptors Implementation](https://pastebin.com/hZ6ax53w)
 
-## BUG FIX! - nonCoherentAtomSize
+## Further Reading
 
-[Bug fix code changes](https://github.com/blurrypiano/littleVulkanEngine/commit/65b9c745d4e6728f8e61cd475c6ad72ac48a1ccd)
+[VkGuide.dev - Abstracting Descriptors](https://vkguide.dev/docs/extra-chapter/abstracting_descriptors/)
 
-[Video - Bug fix](https://youtu.be/hFcmtJG3_Ao)
-
-## Resources
-
-[Zeux - Writing an efficient vulkan Renderer](https://zeux.io/2020/02/27/writing-an-efficient-vulkan-renderer/)
-
-[Kyle Halladay - Comparing Uniform Data Transfer Methods](http://kylehalladay.com/blog/tutorial/vulkan/2017/08/13/Vulkan-Uniform-Buffers.html)
-
-[Sascha Willems - Example VkBuffer wrapper class](https://github.com/SaschaWillems/Vulkan/blob/master/base/VulkanBuffer.h)
+[Vulkan Tutorial - Descriptor Sets](https://vulkan-tutorial.com/Uniform_buffers/Descriptor_layout_and_buffer)
 
 ## Building
 
