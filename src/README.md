@@ -1,24 +1,14 @@
-# Intro to Point Lights - Tutorial 21
+# Vertex vs Fragment Lighting - Tutorial 22
 
-Point lights are infinitesimally small sources of light. They differ from directional lighting in two major ways: the direction to the light source will be different for each vertex and the intensity of light is attenuated based on the distance between the vertex and the light’s position.
+Currently all lighting calculations are being performed within a vertex shader, meaning that light intensity is only calculated for each vertex, and the computed color is then blended across the fragments of each triangle. Rather than interpolating the final color value, we can instead interpolate the surface normal at each vertex. Then within the fragment shader we use the interpolated normal vector, and the direction to the light source from the position on the fragment, to calculate the intensity of light at each fragment. 
 
-In this tutorial we add a point light object to the global UBO and update the vertex shader to make use of this new lighting technique.
+[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/26db088c1daa7cf585040bd1280a1d8eebba2986)
 
-[quad.obj](https://pastebin.com/A8Q7tdeJ)
-
-[View Tutorial Changes](https://github.com/blurrypiano/littleVulkanEngine/commit/89170199fd547857687c669be39de23e2f666b51)
-
-[Video Tutorial](https://youtu.be/Z1lLwAEMt4M)
+[Video Tutorial](https://youtu.be/YnMyKHfrgU4)
 
 ## Further Reading and Video Resources
 
-[Wikipedia - Inverse Square Law](https://en.wikipedia.org/wiki/Inverse-square_law)
-
-[Parameterized Point Light Attenuation](https://www6.uniovi.es/java3d/slides/mt0362.htm)
-
-[StackOverflow - Should you use vec3 in UBOs](https://stackoverflow.com/questions/38172696/)
-
-[O'Reilly std140 Layout Rules](https://www.oreilly.com/library/view/opengl-programming-guide/9780132748445/app09lev1sec2.html)
+[Fragment Lighting](https://paroj.github.io/gltut/Illumination/Tut10%20Fragment%20Lighting.html)
 
 ## Building
 
